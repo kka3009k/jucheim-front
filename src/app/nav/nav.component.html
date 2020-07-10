@@ -1,25 +1,125 @@
-<nav
-<div class="container-fluid">
-  <!—Название сайта и кнопка раскрытия меню для мобильных-->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Название сайта</a>
-  </div>
+<header class="header">
 
-  <!—Само меню-->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Пункт 1</a></li>
-      <li><a  (click)="routLink(1)">Пункт 2</a></li>
-      <li><a href="#">Пункт 3</a></li>
-      <li><a href="#">Пункт 4</a></li>
-      <li><a href="#">Пункт 5</a></li>
+  <div class="content-layout"><div class="content-layout-row"><div class="layout-cell" style="width: 40%;"><!-- begin nostyle -->
+    <div class="nostyle logo">
+      <!-- begin nostyle content -->
+
+
+      <div class="custom logo">
+        <h1 style="padding: 13px 20px;"><a href="http://localhost:4200/main"><img class="logo" src="src/assets/img/logo.jpg" border="0" alt="logo" style="border: 0;"></a></h1></div>
+      <!-- end nostyle content -->
+    </div>
+    <!-- end nostyle -->
+  </div><div class="layout-cell" style="width: 40%;"><!-- begin nostyle -->
+    <div class="nostylecons">
+      <!-- begin nostyle content -->
+
+
+      <div class="customcons">
+        <div class="ph"><img src="/images/ph.png" border="0"></div>
+        <div class="con">
+          <p>Онлайн консультация</p>
+          <p><a href="tel:+996770800688"><img src="/images/wal1.png" border="0">+ 996 770 800 688</a></p>
+          <p><a href="tel:+996777950099"><img src="/images/wal1.png" border="0">+ 996 777 950 099</a></p>
+        </div></div>
+      <!-- end nostyle content -->
+    </div>
+    <!-- end nostyle -->
+    <!-- begin nostyle -->
+    <div class="nostyless">
+      <!-- begin nostyle content -->
+
+      <form class="ss" name="searchForm" method="post" action="/magazin/search/result.html" onsubmit="return isEmptyValue(jQuery('#jshop_search').val())">
+        <input type="hidden" name="setsearchdata" value="1">
+        <input type="hidden" name="category_id" value="0">
+        <input type="hidden" name="search_type" value="exact">
+        <input type="text" class="inputbox" style="width: 150px;" name="search" id="jshop_search" value="">
+        <input class="button" style="padding: 0px 10px; zoom: 1;" type="submit" value="поиск">
+      </form><!-- end nostyle content -->
+    </div>
+    <!-- end nostyle -->
+  </div><div class="layout-cell" style="width: 15%;"><!-- begin nostyle -->
+    <div class="nostyle">
+      <!-- begin nostyle content -->
+      <div id="jshop_module_cart" style="
+    padding-top: 4px;
+    text-align: center;">
+
+        <a href="/magazin/cart/view.html">
+          <img src="/images/card.png" height="100px" style="
+    left: -3px;
+    position: relative;">  </a>
+
+        <table style="
+    text-align: center;
+    border-collapse: separate;  border-spacing: 2px;  border-color: gray;
+    font-size: 13px;  font-weight: bold;width: 140px;margin: auto;    border-top: 1px solid #E8E8E8;    color: #777777;">
+          <tbody><tr style="    height: 30px;">
+            <td>
+              <span id="jshop_quantity_products">0</span>&nbsp;Шт.
+            </td>
+            <td>-</td>
+            <td>
+              <span id="jshop_summ_product">0 СОМ</span>
+            </td>
+          </tr>
+          <tr>
+            <!--td colspan="3" align="right" style="vertical-align: middle;text-align: center;">
+                <a
+        style="border: 0;
+        background: rgb(152,227,22);
+        color: #09693B;
+        text-transform: uppercase;
+        font-size: 90%;
+        font-weight: bold;
+        font-style:none;
+        padding: 4px 10px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;" href = "/magazin/cart/view.html"> В корзину</a>
+            </td-->
+          </tr>
+          </tbody></table>
+      </div><!-- end nostyle content -->
+    </div>
+    <!-- end nostyle -->
+  </div></div></div>
+
+
+</header>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
     </ul>
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
