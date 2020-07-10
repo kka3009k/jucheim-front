@@ -6,7 +6,7 @@ import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes =[
-  { path: '', component: MainComponent},
+  { path: 'main', component: MainComponent},
 
 ];
 
@@ -17,7 +17,10 @@ const appRoutes: Routes =[
     MainComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]
