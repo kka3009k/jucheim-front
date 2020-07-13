@@ -6,10 +6,14 @@ import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
 import {HeadComponent} from './head/head.component';
 import {AboutComponent} from './about/about.component';
-
-const appRoutes: Routes =[
+import {ProductsComponent} from './products/products.component';
+import {ViewProductComponent} from './products/view/view.component';
+const appRoutes: Routes = [
   { path: 'main', component: MainComponent},
-  { path: 'about', component : AboutComponent}
+  { path: 'about', component : AboutComponent},
+  { path: 'products/:id', component : ProductsComponent,
+  },
+  {path: 'products/:category/view/:id', component: ViewProductComponent},
 
 ];
 
@@ -19,7 +23,9 @@ const appRoutes: Routes =[
     NavComponent,
     MainComponent,
     HeadComponent,
-    AboutComponent
+    AboutComponent,
+    ProductsComponent,
+    ViewProductComponent
   ],
   imports: [
     BrowserModule,

@@ -40,7 +40,7 @@
 display: block;">
   <nav class="nav flex-column">
     <ng-container *ngFor="let item of products">
-      <a class="nav-link" [routerLink]="['/main/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
+      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
     </ng-container>
   </nav>
 </div>
