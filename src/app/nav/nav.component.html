@@ -35,3 +35,12 @@
       </form>
     </div>
 </nav>
+
+<div style="width: 20%; float: left;
+display: block;">
+  <nav class="nav flex-column">
+    <ng-container *ngFor="let item of products">
+      <a class="nav-link" [routerLink]="['/main/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
+    </ng-container>
+  </nav>
+</div>
