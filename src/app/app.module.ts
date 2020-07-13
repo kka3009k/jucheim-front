@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
 import {HeadComponent} from './head/head.component';
+import {AboutComponent} from './about/about.component';
 
 const appRoutes: Routes =[
   { path: 'main', component: MainComponent},
+  { path: 'about', component : AboutComponent}
 
 ];
 
@@ -16,7 +18,8 @@ const appRoutes: Routes =[
     AppComponent,
     NavComponent,
     MainComponent,
-    HeadComponent
+    HeadComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
