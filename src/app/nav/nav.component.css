@@ -1,0 +1,18 @@
+li a:hover {
+  color: #E8E8E8; /* Цвет текста активного пункта */
+  background-color: forestgreen; /* Цвет фона активного пункта */
+}
+li:hover ul {
+  display: block; /* При выделении пункта курсором мыши отображается подменю */
+}
+
+.nav-middle {
+  margin-left: 22%;
+}
+
+@media (max-width: 900px) and (min-width: 0px) {
+  .nav-middle
+  {
+    margin-left: 0%;
+  }
+}
