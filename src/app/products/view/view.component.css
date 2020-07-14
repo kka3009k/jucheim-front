@@ -1,0 +1,17 @@
+.img_card{
+  width: 30%;
+  height: 30%;
+  border: 1px solid darkgrey;
+  margin-right: 10px;
+}
+
+.left_block{
+  float: left;
+  display: block;
+}
+
+.card_inner {
+  width: 80%;
+  float: left;
+  display: block;
+}

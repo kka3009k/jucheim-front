@@ -11,3 +11,23 @@
 .price_text {
   color: red;
 }
+
+.title_card{
+  color: darkgoldenrod;
+}
+
+.title_card:hover {
+  color: red;
+}
+
+.img_scale {
+  display: inline-block; /* Строчно-блочный элемент */
+  overflow: hidden; /* Скрываем всё за контуром */
+}
+.img_scale img {
+  transition: 1s; /* Время эффекта */
+  display: block; /* Убираем небольшой отступ снизу */
+}
+.img_scale img:hover {
+  transform: scale(1.2); /* Увеличиваем масштаб */
+}
