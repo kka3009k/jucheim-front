@@ -3,3 +3,10 @@
   float: left;
   display: block;
 }
+
+
+@media (max-width: 900px) and (min-width: 0px) {
+  .main_inner{
+    width: 60%;
+  }
+}

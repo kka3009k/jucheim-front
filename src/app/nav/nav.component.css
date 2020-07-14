@@ -1,16 +1,30 @@
 li a:hover {
-  color: #E8E8E8; /* Цвет текста активного пункта */
-  background-color: forestgreen; /* Цвет фона активного пункта */
+  color: #efe5d7; /* Цвет текста активного пункта */
+  background-color: #efe9aa; /* Цвет фона активного пункта */
 }
 
 .nav-middle {
   margin-left: 22%;
 }
 
+.left_nav{
+  width: 20%;
+}
+
+.nav_bg{
+  margin-top: 200px;
+  background-image: url("src/assets/img/horizontal-nav.png");
+}
+
+
 @media (max-width: 900px) and (min-width: 0px) {
   .nav-middle
   {
     margin-left: 0%;
   }
+  .left_nav{
+    width: 30%;
+  }
 }
+
 

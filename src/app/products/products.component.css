@@ -31,3 +31,24 @@
 .img_scale img:hover {
   transform: scale(1.2); /* Увеличиваем масштаб */
 }
+
+
+.font-title{
+  font-size: 15px;
+}
+
+@media (max-width: 700px) and (min-width: 0px) {
+  .font-title{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 0px) {
+  .main_card{
+    width: 70%;
+  }
+  .font-title{
+    font-size: 12px;
+  }
+}
+

@@ -11,3 +11,22 @@
 .price_text{
   color: red;
 }
+
+.font-title{
+  font-size: 15px;
+}
+
+@media (max-width: 900px) and (min-width: 0px) {
+  .main_card{
+    width: 60%;
+  }
+  .font-title{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 0px) {
+  .font-title{
+    font-size: 10px;
+  }
+}

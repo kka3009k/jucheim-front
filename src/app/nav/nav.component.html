@@ -1,10 +1,12 @@
 <div class="header">
   <div class="header-left">
+    <app-head style="margin-top: 10%"></app-head>
   </div>
 
-  <app-head></app-head>
 </div>
-<nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+
+<!--Horizontal menu-->
+<nav class="navbar navbar-expand-md navbar-light nav_bg ">
     <a class="navbar-brand nav-middle" [routerLink]="['/main']" routerLinkActive="active">JUCHEIM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,28 +33,41 @@
       </ul>
       <form class="form-inline my-2 my-lg-0" style="margin-left: 10px">
         <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Поиск</button>
       </form>
     </div>
 </nav>
 
-<div style="width: 20%; float: left;
-display: block;">
-  <nav class="nav flex-column">
-    <ng-container *ngFor="let item of products">
-      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
-    </ng-container>
-    <ng-container *ngFor="let item of products">
-      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
-    </ng-container>
-    <ng-container *ngFor="let item of products">
-      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
-    </ng-container>
-    <ng-container *ngFor="let item of products">
-      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
-    </ng-container>
-    <ng-container *ngFor="let item of products">
-      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
-    </ng-container>
+<!--Vertical menu-->
+<div style="float: left;
+display: block;" class="left_nav">
+  <nav class="navbar  navbar-light" style="background-color: #fff5e7">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="assets/img/nav-button.png" width="40" height="30">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <ng-container *ngFor="let item of products">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
+          </li>
+        </ng-container>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Масла
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ng-container *ngFor="let item of products">
+              <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
+            </ng-container>
+          </div>
+        </li>
+      </ul>
+    </div>
   </nav>
+  <!--<nav class="nav flex-column">
+    <ng-container *ngFor="let item of products">
+      <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
+    </ng-container>
+  </nav>-->
 </div>

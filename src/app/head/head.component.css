@@ -1,0 +1,14 @@
+.header_pos{
+  position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.header_block{
+  float: left;
+  display: block;
+}
