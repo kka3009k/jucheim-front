@@ -6,6 +6,12 @@
   -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
   -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+  width: 100%;
+  background-image: url("src/assets/img/shapka.JPG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 50%;
+  background-color: #fffef0;
 }
 
 .header_block{
@@ -26,3 +32,25 @@
   padding: 1.5em;
   color: white;
 }
+
+.whats_logo{
+  width: 25px;
+  height: 25px;
+}
+
+.whats_text{
+  font-size: 14px;
+}
+
+.flex-container-column div {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.flex-item {
+  text-align:center;
+  font-size: 1em;
+  padding: 1.2em;
+  color: white;
+}
+
