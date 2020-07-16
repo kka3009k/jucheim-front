@@ -22,7 +22,7 @@ export class NavComponent implements OnInit {
     product.name = 'Байбай';
     this.products.push(product);
     product.id = 2;
-    product.name = 'Канапур';
+    product.name = 'Крем';
     this.products.push(product);
   }
   routLink(link){
