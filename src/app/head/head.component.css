@@ -7,6 +7,9 @@
   -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
   width: 100%;
+}
+
+.header_bg {
   background-image: url("src/assets/img/shapka.JPG");
   background-repeat: no-repeat;
   background-size: contain;
@@ -54,3 +57,11 @@
   color: white;
 }
 
+.head_banner {
+  width: 100%;
+  height: 100px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}

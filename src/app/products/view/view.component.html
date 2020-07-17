@@ -1,14 +1,17 @@
 <div class="card_inner">
   <div class="card-body left_block">
     <div class="img_card left_block">
-      <img class="card-img-top" src="assets/img/123.jpg" alt="Card image cap">
+      <img class="card-img-top" src="{{infoProduct.photo}}" alt="Card image cap">
     </div>
     <div>
-      <h5 class="card-title">ORGANIC PROTECT & REPAIR wonder cream 50 мл</h5>
+      <h5 class="card-title">{{infoProduct.name}}</h5>
+    </div>
+    <div>
+      <p class="card-text" >Категория: <a (click)="routLink(infoProduct.category)" style = 'cursor: pointer;'>{{infoProduct.category_name.name}}</a></p>
     </div>
     <div>
       <p>
-      <font style="color: red;font-weight: bold">8000 сом</font>  + Доставка
+      <font style="color: red;font-weight: bold">{{infoProduct.price}} сом</font>  + Доставка
         Grundpreis <font style="font-weight: bold">10000 сом</font> / 100 ml
       </p>
       <input type="number" placeholder="0" style="width: 80px; margin-right: 5px"/>
@@ -16,9 +19,7 @@
     </div>
     <div>
       <h4>Описание:</h4>
-      <p class="card-text">Мощный крем Bio Wonder, основанный на чистом алоэ-барбаденсисе, помогает защитить уставшую и поврежденную кожу сразу же после первого применения, омолодит и сделает её сияющей.
-        Organic Protect & Repair Wonder крем активирует процесс естественной регенерации клеток кожи и помогает компенсировать недостатки, вызванные стрессом и вредными воздействиями окружающей среды. Инновационная и ценная текстура с силой природы делают кожу более мягкой, сияющей и молодой. Для чувствительной и поврежденной кожи.
-        Идеально сочетается с Organic Protect & Repair Complex Serum. Сертифицированная роскошная натуральная косметика.</p>
+      <p class="card-text">{{infoProduct.description}} </p>
     </div>
   </div>
 </div>

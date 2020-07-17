@@ -25,7 +25,7 @@
             Продукты
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-            <ng-container *ngFor="let item of products">
+            <ng-container *ngFor="let item of categories">
               <a class="dropdown-item" [routerLink]="['/main/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
             </ng-container>
           </div>
@@ -47,21 +47,21 @@ display: block;" class="left_nav">
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <ng-container *ngFor="let item of products">
+        <ng-container *ngFor="let item of categories">
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
+            <a  class="nav-link" (click)="routLink('products/'+ item.id)" routerLinkActive="active" style = 'cursor: pointer;'>{{item.name}}</a>
           </li>
         </ng-container>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <!--<li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Масла
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <ng-container *ngFor="let item of products">
+            <ng-container *ngFor="let item of categories">
               <a class="nav-link" [routerLink]="['/products/'+ item.id]" routerLinkActive="active">{{item.name}}</a>
             </ng-container>
           </div>
-        </li>
+        </li>-->
       </ul>
     </div>
   </nav>

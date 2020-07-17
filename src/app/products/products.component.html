@@ -1,36 +1,20 @@
 <div class="row main_card">
+  <ng-container *ngFor="let item of products">
   <div class="col-sm-4" >
     <div class="card card-block">
       <div class="img_card img_scale">
-        <img class="card-img-top" src="assets/img/123.jpg" alt="Card image cap">
+        <img class="card-img-top" src="{{item.photo}}" alt="Card image cap">
       </div>
-      <a href="#" [routerLink]="['/products/2/view/1']" routerLinkActive="active">
-        <h5 class="card-title text-center title_card font-title">ORGANIC PROTECT & REPAIR WONDER CREAM</h5>
+      <a href="#" [routerLink]="['/products/2/view/'+ item.id]" routerLinkActive="active">
+        <h5 class="card-title text-center title_card font-title">{{item.name}}</h5>
       </a>
-      <p class="card-text">Категория: Масла</p>
-      <p class="card-text price_text">8000 сом</p>
+      <p class="card-text" >Категория: <a (click)="routLink('products/'+ item.category)">{{item.category_name.name}}</a></p>
+      <p class="card-text price_text">{{item.price}} сом</p>
       <div style= "margin: 0 10px 0 auto; margin-bottom: 10px;">
-        <a href="#" class="btn btn-info" style="margin-right: 15px" [routerLink]="['/products/2/view/1']" routerLinkActive="active">Просмотр</a>
+        <a href="#" class="btn btn-info" style="margin-right: 15px" [routerLink]="['/products/2/view/' + item.id]" routerLinkActive="active">Просмотр</a>
         <a href="#" class="btn btn-primary">В корзину</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-4" >
-    <div class="card card-block">
-      <div class="img_card img_scale">
-        <a href="#" [routerLink]="['/products/2/view/1']" routerLinkActive="active">
-          <img class="card-img-top" src="assets/img/123.jpg" alt="Card image cap">
-        </a>
-      </div>
-      <a href="#" [routerLink]="['/products/2/view/1']" routerLinkActive="active">
-        <h5 class="card-title text-center title_card font-title">ORGANIC PROTECT & REPAIR WONDER CREAM</h5>
-      </a>
-      <p class="card-text">Категория: Масла</p>
-      <p class="card-text price_text">8000 сом</p>
-      <div style= "margin: 0 10px 0 auto; margin-bottom: 10px;">
-        <a href="#" class="btn btn-info" style="margin-right: 15px" [routerLink]="['/products/2/view/1']" routerLinkActive="active">Просмотр</a>
-        <a href="#" class="btn btn-primary">В корзину</a>
-      </div>
-    </div>
-  </div>
+  </ng-container>
 </div>
