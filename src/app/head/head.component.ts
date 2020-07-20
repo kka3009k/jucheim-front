@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import {AppletService} from '../_services/applet.service';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-head',
   templateUrl: './head.component.html',
@@ -15,6 +16,8 @@ export class HeadComponent implements OnInit {
   activeBanner;
   countBanners;
   activeBannerIndex = 0;
+  slideIndex = 1;
+  showBanner = true;
   constructor( public router: Router,
                public app: AppletService,
   ) {
@@ -22,6 +25,7 @@ export class HeadComponent implements OnInit {
 
   ngOnInit() {
     this.getBanners();
+   // $('.carousel').carousel()
     this.router.navigate(['/main']);
   }
 
@@ -65,7 +69,7 @@ export class HeadComponent implements OnInit {
     let i = 0;
     for (let ban in this.banners) {
       i++;
-      if (i == activeBannerIndex) {
+      if (i == this.activeBannerIndex) {
         this.activeBanner = ban;
       }
     }
@@ -83,6 +87,9 @@ export class HeadComponent implements OnInit {
     /*const link = this.activeLink;
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
       this.router.navigate([link]));*/
+  }
+  view() {
+    window.open('google.com');
   }
 
 }
