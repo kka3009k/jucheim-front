@@ -92,4 +92,8 @@ export class HeadComponent implements OnInit {
     window.open('google.com');
   }
 
+  viewBasket(text) {
+    console.log(text);
+  }
+
 }

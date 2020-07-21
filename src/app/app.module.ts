@@ -11,6 +11,7 @@ import {HeadComponent} from './head/head.component';
 import {AboutComponent} from './about/about.component';
 import {ProductsComponent} from './products/products.component';
 import {ViewProductComponent} from './products/view/view.component';
+import {FooterComponent} from './footer/footer.component';
 import { LOCALE_ID } from '@angular/core';
 const appRoutes: Routes = [
   { path: 'main', component: MainComponent},
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     HeadComponent,
     AboutComponent,
     ProductsComponent,
-    ViewProductComponent
+    ViewProductComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
