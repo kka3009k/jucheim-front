@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AppletService {
-	API_URL = 'http://localhost:3009';
+	API_URL = 'http://kka3009kka.pythonanywhere.com/';
 
 	constructor(private http: Http,
               	private httpClient: HttpClient,

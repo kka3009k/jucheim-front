@@ -26,14 +26,12 @@ export class HeadComponent implements OnInit {
   ngOnInit() {
     this.getBanners();
    // $('.carousel').carousel()
-    this.router.navigate(['/main']);
+    //this.router.navigate(['/main']);
   }
 
   getBanners() {
     this.app.request('get','/core/banners/').subscribe(res => {
       this.banners = res.results;
-      this.counBanners();
-      //console.loSetg(res);
     }, error => {
       console.log(error);
     });

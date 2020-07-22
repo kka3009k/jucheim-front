@@ -14,6 +14,7 @@ import {ViewProductComponent} from './products/view/view.component';
 import {FooterComponent} from './footer/footer.component';
 import { LOCALE_ID } from '@angular/core';
 const appRoutes: Routes = [
+  { path: '', component: MainComponent},
   { path: 'main', component: MainComponent},
   { path: 'about', component : AboutComponent},
   { path: 'products/:id', component : ProductsComponent,

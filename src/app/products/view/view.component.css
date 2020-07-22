@@ -15,9 +15,22 @@
   float: left;
   display: block;
 }
+.btn-pay {
+  margin-top: -20px;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 10%;
+}
+
+.pay div{
+  display:inline-block;
+}
 
 @media (max-width: 900px) and (min-width: 0px) {
   .card_inner{
-    width: 60%;
+    width: 70%;
   }
 }

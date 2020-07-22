@@ -17,7 +17,6 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     this.getCategories();
-    this.router.navigate(['/main']);
   }
   getCategories() {
     this.app.request('get','/core/categories/').subscribe(res => {
