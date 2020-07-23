@@ -1,4 +1,6 @@
 .main_card{
+  margin-top: 400px;
+  margin-left: 15%;
   width: 80%;
 }
 .img_card{
@@ -17,16 +19,22 @@
 }
 
 @media (max-width: 900px) and (min-width: 0px) {
-  .main_card{
-    width: 60%;
-  }
   .font-title{
     font-size: 12px;
   }
 }
 
 @media (max-width: 700px) and (min-width: 400px) {
-  .font-title{
+  .font-title {
     font-size: 10px;
+  }
+
+}
+
+@media (max-width: 400px) and (min-width: 0px) {
+
+  .main_card {
+    margin-top: 300px;
+
   }
 }
