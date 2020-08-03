@@ -12,6 +12,7 @@ import {AboutComponent} from './about/about.component';
 import {ProductsComponent} from './products/products.component';
 import {ViewProductComponent} from './products/view/view.component';
 import {FooterComponent} from './footer/footer.component';
+import {CartComponent} from './cart/cart.component';
 import { LOCALE_ID } from '@angular/core';
 const appRoutes: Routes = [
   { path: '', component: MainComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     AboutComponent,
     ProductsComponent,
     ViewProductComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

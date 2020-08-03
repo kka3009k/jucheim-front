@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import {AppletService} from '../_services/applet.service';
-import * as $ from 'jquery';
+
+import * as bootstrap from 'bootstrap';
 @Component({
   selector: 'app-head',
   templateUrl: './head.component.html',
@@ -18,13 +19,17 @@ export class HeadComponent implements OnInit {
   activeBannerIndex = 0;
   slideIndex = 1;
   showBanner = true;
+  countProducts;
+
   constructor( public router: Router,
                public app: AppletService,
   ) {
+    this.app.setProduct.subscribe(cnt => this.countProducts = cnt);
   }
 
   ngOnInit() {
     this.getBanners();
+    this.getOrders();
    // $('.carousel').carousel()
     //this.router.navigate(['/main']);
   }
@@ -32,6 +37,15 @@ export class HeadComponent implements OnInit {
   getBanners() {
     this.app.request('get','/core/banners/').subscribe(res => {
       this.banners = res.results;
+    }, error => {
+      console.log(error);
+    });
+  }
+  getOrders() {
+    let cookie: any = -1;
+    if (window.localStorage.getItem('userId')) {cookie = window.localStorage.getItem('userId');}
+    this.app.request('get','/core/orders/', cookie).subscribe(res => {
+      this.countProducts = res.count;
     }, error => {
       console.log(error);
     });
@@ -92,6 +106,14 @@ export class HeadComponent implements OnInit {
 
   viewBasket(text) {
     console.log(text);
+    try {
+
+
+      this.app.showCart.emit(true);
+    }
+    catch (e) {
+      console.log(e);
+    }
   }
 
 }

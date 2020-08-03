@@ -19,6 +19,10 @@ li a:hover {
   background-image: url("src/assets/img/horizontal-nav.png");
 }
 
+.position-nav {
+  position:fixed;
+}
+
 
 @media (max-width: 900px) and (min-width: 0px) {
   .nav-middle

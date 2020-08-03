@@ -11,9 +11,10 @@
 }
 
 .card_inner {
+  margin-top: 400px;
+  margin-left: 15%;
   width: 80%;
-  float: left;
-  display: block;
+
 }
 .btn-pay {
   margin-top: -20px;

@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Http, Headers, Response, RequestOptions, ResponseContentType} from '@angular/http';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import {Observable} from 'rxjs';
@@ -10,8 +10,10 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AppletService {
-	API_URL = 'http://kka3009kka.pythonanywhere.com/';
-
+	//API_URL = 'http://kka3009kka.pythonanywhere.com/';
+  API_URL = 'http://localhost:3008';
+  setProduct: EventEmitter<number> = new EventEmitter();
+  showCart: EventEmitter<boolean> = new EventEmitter();
 	constructor(private http: Http,
               	private httpClient: HttpClient,
               	public router: Router) {
@@ -130,41 +132,53 @@ export class AppletService {
     	}
   	}
 
-	/*uploadCSV(file):Observable<any>{
-		const headers = new Headers();
-    	headers.append('mimeType', 'multipart/form-data');
-    	headers.append('Authorization', 'JWT ' + this.getToken());
-	    return this.http
-	      	.post(this.API_URL+'/core/document_file/', file,
-	        	{headers: headers})
-	      	.map(res => {
-	      		let resp = res.json();
-	      		if(resp.data){
-		        	return resp.data;
-	      		}else{
-	      			return resp;
-	      		}
-	      	})
-	      	.catch(this.handleError);
-	}
+  request_js(method, url, id = null, data = {}, customHeader = {}) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    if (id) {
+      url = url + id + '/';
+    }
 
-	uploadFile(file, url):Observable<any>{
-		const headers = new Headers();
-    	headers.append('mimeType', 'multipart/form-data');
-    	headers.append('Authorization', 'JWT ' + this.getToken());
-	    return this.http
-	      	.post(this.API_URL+url, file,
-	        	{headers: headers})
-	      	.map(res => {
-	      		let resp = res.json();
-	      		if(resp.data){
-		        	return resp.data;
-	      		}else{
-	      			return resp;
-	      		}
-	      	})
-	      	.catch(this.handleError);
-	}*/
+    if(this.isEmptyObject(data)){
+      return this.http[method](this.API_URL + url,
+        {headers: headers})
+        .map(res => {
+          if(method !== 'delete'){
+            //let resp = res.json();
+            return res.json();
+          }else{
+            return true;
+          }
+        })
+        .catch(this.handleError);
+    }else{
+      return this.http[method](this.API_URL + url, data,
+        {headers: headers})
+        .map(res => {
+
+          let resp = res.json();
+          //this.msg.addToast(resp.base64, 'error');
+          return res.json();
+        })
+        .catch(this.handleError);
+    }
+  }
+
+  addUser() {
+    let userInfo = {
+      userId: null
+    };
+    this.request_js('post','/core/guest/get_user/', null, userInfo).subscribe(res => {
+      window.localStorage.setItem('userId', res.userId);
+    });
+  }
+
+
+  getAllOrders(cookie) {
+    this.request('get','/core/orders/', cookie).subscribe(res => {
+      return res.results;
+    });
+  }
 
 
 	private handleError(error: any): Promise<any> {

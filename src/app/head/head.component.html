@@ -1,3 +1,4 @@
+
 <header class="header_pos">
   <!-- Контакты -->
   <div class="flex-container space-between head_contact">
@@ -38,7 +39,7 @@
           <img class="basket_img" src="assets/img/basket.png" (click)="viewBasket('img')">
         </div>
         <div class="basket-count">
-          99
+          {{countProducts}}
         </div>
         <!--<div class="basket-text">
           <p class="basket-text-p">Корзина</p>
@@ -51,9 +52,7 @@
         </div>-->
       </div>
     </div>
-  <!--<div class="head_banner" id="headId" (click)="routeBanner()">
 
-  </div>-->
 </header>
 <div class="slideshow-container" *ngIf="showBanner">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
@@ -85,3 +84,4 @@
     </a>
   </div>
 </div>
+

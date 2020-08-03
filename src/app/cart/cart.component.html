@@ -1,0 +1,70 @@
+<div class="modal fade basket-count" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="overflow:auto">
+        <table class="table">
+          <thead>
+          <tr>
+            <td></td>
+            <td>Наименование:</td>
+            <td>Цена:</td>
+            <td>Кол-во:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-container *ngFor="let item of orders">
+            <tr>
+              <td>
+                <img src="http://localhost:3008{{item.product_info.photo}}"  class="img-product">
+              </td>
+              <td >
+                <div class="text-top">
+                  <font class="name-product">{{item.product_info.name}}</font>
+                </div>
+              </td>
+              <td>
+                <div class="text-top">
+                  <font class="quant-product">{{item.product_info.price}} сом</font>
+                </div>
+              </td>
+              <td>
+                <div class="text-top">
+                  <font class="quant-product">{{item.quantity}} шт.</font>
+                </div>
+              </td>
+              <td>
+                <div class="text-top cursor-point" (click)="addProduct(-1,item.product)">
+                  -
+                </div>
+              </td>
+              <td>
+                <div class="text-top cursor-point" (click)="addProduct(1,item.product)">
+                  +
+                </div>
+              </td>
+              <td>
+                <div class="text-top cursor-point" (click)="removeOrder(item.product)">
+                  x
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer card-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Заказать</button>
+      </div>
+    </div>
+  </div>
+</div>

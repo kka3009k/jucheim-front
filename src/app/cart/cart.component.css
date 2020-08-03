@@ -1,0 +1,64 @@
+.img-product {
+  height: 70px;
+  width: 70px;
+}
+
+.text-top {
+  margin-top: 25px;
+}
+
+.cursor-point {
+  cursor: pointer;
+}
+.name-product {
+  font-size: 18px;
+  color: darkgoldenrod;
+}
+
+.quant-product {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.basket-count {
+
+}
+
+.flex-container {
+  display: flex;
+}
+.space-between{
+  justify-content: space-between;
+}
+
+.flex-item {
+  text-align:center;
+  font-size: 1em;
+  padding: 1.5em;
+  color: white;
+}
+
+
+.flex-container-column div {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.flex-item {
+  text-align:center;
+  font-size: 1em;
+  padding: 1.2em;
+  color: white;
+}
+
+
+
+@media (max-width: 400px) and (min-width: 0px) {
+
+
+}
+
+@media (max-width: 500px) and (min-width: 0px) {
+
+
+}

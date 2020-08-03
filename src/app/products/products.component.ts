@@ -30,4 +30,31 @@ export class ProductsComponent implements OnInit {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
       this.router.navigate([link]));
   }
+  addProduct(id) {
+    /*if (!window.localStorage.getItem('userId')) {
+      let userInfo = {
+        userId: null
+      };
+      this.app.request_js('post','/core/guest/get_user/', null, userInfo).subscribe(res => {
+        window.localStorage.setItem('userId', res.userId);
+        this.add(id);
+      });
+    }
+    else {
+      this.add(id);
+    }*/
+    let orderInfo = {
+      id: id,
+      coockie: null,
+      quantity: 1
+    };
+    orderInfo.coockie = window.localStorage.getItem('userId');
+    this.app.request_js('post','/core/orders/', null, orderInfo).subscribe(res => {
+      this.app.setProduct.emit(res.countOrders);
+    });
+ }
+
+ add(id) {
+
+ }
 }

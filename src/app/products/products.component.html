@@ -12,9 +12,10 @@
       <p class="card-text price_text">{{item.price}} сом</p>
       <div style= "margin: 0 10px 0 auto; margin-bottom: 10px;">
         <a href="#" class="btn btn-info" style="margin-right: 15px" [routerLink]="['/products/2/view/' + item.id]" routerLinkActive="active">Просмотр</a>
-        <a href="#" class="btn btn-primary">В корзину</a>
+        <div class="btn btn-primary" (click)="addProduct(item.id)">В корзину</div>
       </div>
     </div>
   </div>
   </ng-container>
 </div>
+
